@@ -64,3 +64,20 @@ class Solution:
             if forward[i] != backward[i]:
                 return False
         return True
+    
+
+# Solution #3
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+
+        if len(s) == 1:
+            return True
+
+        s = ''.join(c.lower() for c in s if c.isalnum())
+        
+        backward = s[::-1]
+
+        if s == backward:
+            return True
+        return False
+        
