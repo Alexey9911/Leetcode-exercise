@@ -45,3 +45,22 @@ class Solution:
         return (ord('A') <= ord(c) <= ord('Z') or
                 ord('a') <= ord(c) <= ord('z') or
                 ord('0') <= ord(c) <= ord('9')) 
+
+
+
+
+# Solution 2
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+
+        if len(s) == 1:
+            return True
+
+        s = ''.join(c.lower() for c in s if c.isalnum())
+        forward = s[::]
+        backward = s[::-1]
+
+        for i in range(len(forward)):
+            if forward[i] != backward[i]:
+                return False
+        return True
