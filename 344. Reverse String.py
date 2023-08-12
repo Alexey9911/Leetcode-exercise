@@ -23,3 +23,21 @@ class Solution:
             s[l],s[r] = s[r],s[l]
             l,r = l +1 , r - 1
         
+
+# SOLUTION #2
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        stack = []
+
+        for l in s:
+            stack.append(l)
+        
+        i = 0
+        while i < len(s):
+            s[i] = stack.pop()
+            i += 1 
+        return s
+        
